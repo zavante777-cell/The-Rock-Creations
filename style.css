@@ -13,6 +13,7 @@ header {
     color: white;
     padding: 1rem;
     text-align: center;
+    
 }
 
 /* === FOOTER === */
@@ -199,3 +200,39 @@ footer {
   line-height: 1.5;
 }
 
+/* === MENU VISIBILITY FIX === */
+/* Remove the forced display and let JavaScript control it */
+.menu {
+    transition: opacity 0.3s ease;
+}
+
+.menu.show {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Make sure button is always above menu */
+.btn {
+    z-index: 10001 !important;
+}
+/* Background for split-left in About section */
+.split-left {
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* === About section background fix === */
+#about .split-left {
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 400px;
+}
+
+#about .split-left .project-image {
+    display: none; /* Hide this since we're using parent background */
+}
